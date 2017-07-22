@@ -29,7 +29,7 @@
 
   </head>
   <body>
-
+欢迎[${sessionScope.user.loginname }]访问,当前在线人数：${applicationScope.count}
     <div class="container-fluid">
 	   <div class="container-fluid">
 	<div class="row">
@@ -64,7 +64,7 @@
 					<a href="forgetpwd">忘记密码</a>
 				</li>
 				<li>
-					<a href="collect">收藏</a>
+					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
 					
 				<li class="divider">
@@ -167,7 +167,9 @@
 			<div class="row clearfix">
 			<br>
 				<div class="col-md-2 column">
-					 <button type="button" class="btn btn-default btn-warning">收藏</button>
+					 <button type="button" class="btn btn-default btn-warning">
+					 <a href="saveCollect?book_id=${book.id}&loginname=${user.loginname}&image=${book.image}&name=${book.name}&price=${book.price}">收藏</a>
+					 </button>
 				</div>
 				<div class="col-md-3 column">
 					 <button type="button" class="btn btn-default btn-success">

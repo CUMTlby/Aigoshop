@@ -51,7 +51,7 @@
 					<a href="forgetpwd">忘记密码</a>
 				</li>
 				<li>
-					<a href="collect">收藏</a>
+					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
 					
 				<li class="divider">

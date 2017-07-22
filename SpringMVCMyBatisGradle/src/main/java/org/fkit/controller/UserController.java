@@ -36,6 +36,8 @@ public class UserController {
 			 ModelAndView mv,
 			 HttpSession session){
 		// 根据登录名和密码查找用户，判断用户登录
+
+		
 		User user = userService.login(loginname, password);
 		if(user != null){
 			

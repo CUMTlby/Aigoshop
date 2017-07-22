@@ -25,7 +25,7 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
-	欢迎[${sessionScope.user.username }]访问,当前在线人数：${applicationScope.count}
+	欢迎[${sessionScope.user.loginname }]访问,当前在线人数：${applicationScope.count}
     <div class="container-fluid">
 	   <div class="container-fluid">
 	<div class="row">
@@ -60,7 +60,7 @@
 					<a href="forgetpwd">忘记密码</a>
 				</li>
 				<li>
-					<a href="collect">收藏</a>
+					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
 					
 				<li class="divider">

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
   <head>
@@ -17,7 +18,7 @@
 
   </head>
   <body>
-
+欢迎[${sessionScope.user.loginname }]访问,当前在线人数：${applicationScope.count}
     <div class="container-fluid">
 	<div class="row">
         <br>
@@ -38,7 +39,7 @@
 				<li >
 					<a href="shop">购物车</a>
 				</li>
-				<li  class="active">
+				<li  >
 					<a href="order">我的订单</a>
 				</li>
 				<li>
@@ -50,8 +51,8 @@
 				<li>
 					<a href="forgetpwd">忘记密码</a>
 				</li>
-				<li>
-					<a href="collect">收藏</a>
+				<li class="active">
+					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
 					
 				<li class="divider">
@@ -68,6 +69,7 @@
 			<div class="col-md-3 column">
 			</div>
 			<div class="col-md-6 column">
+			
 				<table class="table">
 					<thead>
 						<tr>
@@ -82,27 +84,31 @@
 							价格
 							</th>
 							<th>
-						
+							删除收藏
 							</th>
 						</tr>
 					</thead>
+					
+					<c:forEach items="${requestScope.collect_list }" var="collect">
 				<tbody>
 					<tr>
 						<td>
-							<img alt="Bootstrap Image Preview" src="images/${book.image }" />
+							<img alt="Bootstrap Image Preview" src="images/${collect.image }" />
 						</td>
 						<td>
-							${book.name}
+							${collect.name}
 						</td>
 						
 						<td>
-							${book.price}
+							${collect.price}
 						</td>
 						<td>
-							<a href="details" >详情>></a>
+							<a href="removecollect?book_id=${collect.book_id}&loginname=${sessionScope.user.loginname}"><font size=3>删除</font></a>
 						</td>
 					</tr>
 					</tbody>
+					</c:forEach>
+					
 				 </table>
 		
 				<div class="col-md-3 column">
