@@ -145,7 +145,7 @@ function userLogin(){   /**用户登录，其中需要判断是否选择记住�
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-10">
 						 
-						<button type="submit" class="btn btn-default">
+						<button type="submit" class="btn btn-default" onclick="userLogin()">
 						        登录
 						</button>
 					</div>
