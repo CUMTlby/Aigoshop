@@ -26,15 +26,12 @@ public class CollectServiceImpl implements CollectService{
 		return collectMapper.findAllCollectByLoginname(loginname);
 	}
 	@Override
-	public void clearCollect(String loginname) {
-		// TODO Auto-generated method stub
-		collectMapper.clearCollect(loginname);
-	}
-	@Override
 	public Collect findCollect(String loginname,Integer book_id) {
 		// TODO Auto-generated method stub
 		return collectMapper.findCollect(loginname,book_id);
 	}
+
+	
 	@Override
 	public Collect removeCollect(String loginname,Integer book_id) {
 		// TODO Auto-generated method stub

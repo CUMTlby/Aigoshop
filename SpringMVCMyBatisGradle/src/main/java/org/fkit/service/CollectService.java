@@ -14,15 +14,11 @@ public interface CollectService {
 	 * @return Detail小说对象集合
 	 */
 	List<Collect> getAllCollectByLoginname(String loginname);
-	 
-	/**
-	 * 清空收藏
-	 **/
-	void clearCollect(String loginname);
 	/**
 	 * 通过商品ID和loginname查询收藏书籍
 	 **/
-	Collect findCollect(String loginname,Integer book_id);
+	Collect findCollect(String loginname,Integer book_id); 
+	
 	/**
 	 * 删除收藏
 	 **/

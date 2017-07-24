@@ -27,7 +27,7 @@ public class BookController {
 	private BookService bookService;
 
 	/**
-	 * 处理/main请求
+	 * 处理/index请求
 	 * */
 	@RequestMapping(value="/index")
 	 public String index(Model model){
@@ -35,7 +35,7 @@ public class BookController {
 		List<Book> book_list = bookService.getAll();
 		// 将图书集合添加到model当中
 		model.addAttribute("book_list", book_list);
-		// 跳转到main页面
+		// 跳转到index页面
 		return "index";
 	}
 	
@@ -44,9 +44,9 @@ public class BookController {
 	 public String one(@RequestParam  int book_id,Model model,HttpSession session){
 			// 获得一个图书
 		    Book book= bookService.getone(book_id);
-			// 将图书集合添加到model当中
+			// 将图书添加到session当中
 			session.setAttribute("book", book);
-			// 跳转到main页面
+			// 跳转到details页面
 			return "details";
 			
 		}
@@ -57,7 +57,7 @@ public class BookController {
 		List<Book> book_list= bookService.getsk();
 			// 将图书集合添加到model当中
 			model.addAttribute("book_list", book_list);
-			// 跳转到main页面
+			// 跳转到sheke页面
 			return "sheke";
 	}
 	

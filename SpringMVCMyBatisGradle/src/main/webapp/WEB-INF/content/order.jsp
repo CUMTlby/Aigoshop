@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
   <head>
@@ -19,6 +20,7 @@
   <body>
 
     <div class="container-fluid">
+	<div class="container-fluid">
 	<div class="row">
         <br>
         
@@ -35,12 +37,6 @@
 				<li>
 					<a href="login">登录</a>
 				</li>
-				<li >
-					<a href="shop">购物车</a>
-				</li>
-				<li  class="active">
-					<a href="order">我的订单</a>
-				</li>
 				<li>
 					<a href="register">注册</a>
 				</li>
@@ -50,6 +46,13 @@
 				<li>
 					<a href="forgetpwd">忘记密码</a>
 				</li>
+				<li >
+					<a href="shop">购物车</a>
+				</li>
+				<li  class="active">
+					<a href="order">我的订单</a>
+				</li>
+				
 				<li>
 					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
@@ -65,6 +68,8 @@
 		<br>
 		<br>
 		<div class="row clearfix">
+			<div class="col-md-12 column">
+		<div class="row clearfix">
 			<div class="col-md-3 column">
 			</div>
 			<div class="col-md-6 column">
@@ -78,35 +83,39 @@
 							商品
 							</th>
 							
-							<th>
-							价格
-							</th>
+						
 							<th>
 						
 							</th>
 						</tr>
 					</thead>
+					<c:forEach items="${requestScope.order_list }" var="order">
 				<tbody>
 					<tr>
 						<td>
-							<img alt="Bootstrap Image Preview" src="images/${book.image }" />
+							<img alt="Bootstrap Image Preview" src="images/${order.image }" />
 						</td>
 						<td>
-							${book.name}
+							${order.name}
 						</td>
 						
-						<td>
-							${book.price}
-						</td>
+						
 						<td>
 							<a href="orderdetails" >订单详情</a>
 						</td>
 					</tr>
 					</tbody>
+					</c:forEach>
 				 </table>
 		
 				<div class="col-md-3 column">
 			</div>
 			</div>
+			</div>
+			</div>
+			
+			<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

@@ -19,11 +19,13 @@ public interface UserMapper {
 	User findWithLoginnameAndPassword(@Param("loginname")String loginname,
 			@Param("password") String password);
 	
+	@Select("update tb_user set password=#{rewpassword},psd=#{rewpsd} where loginname=#{loginname}")
+	User updateuser(@Param("loginname")String loginname,@Param("rewpassword")String rewpassword,@Param("rewpsd")String rewpsd);
+	
 	@Select("select * from tb_user where loginname = #{loginname} and email = #{email}")
 	User findWithLoginnameAndEmail(@Param("loginname")String loginname,
 			@Param("email") String email);
 	
-	@Select("update tb_user set password=#{rewpassword},psd=#{rewpsd} where loginname=#{loginname}")
-	User updateuser(@Param("loginname")String loginname,@Param("rewpassword")String rewpassword,@Param("rewpsd")String rewpsd);
+	
 }
 

@@ -37,12 +37,6 @@
 				<li>
 					<a href="login">登录</a>
 				</li>
-				<li >
-					<a href="shop">购物车</a>
-				</li>
-				<li >
-					<a href="order">我的订单</a>
-				</li>
 				<li>
 					<a href="register">注册</a>
 				</li>
@@ -52,6 +46,13 @@
 				<li>
 					<a href="forgetpwd">忘记密码</a>
 				</li>
+				<li >
+					<a href="shop">购物车</a>
+				</li>
+				<li >
+					<a href="order">我的订单</a>
+				</li>
+				
 				<li>
 					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>

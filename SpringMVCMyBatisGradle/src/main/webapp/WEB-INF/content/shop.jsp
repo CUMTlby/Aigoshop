@@ -18,9 +18,9 @@
 
   </head>
   <body>
-
+欢迎[${sessionScope.user.loginname }]访问,当前在线人数：${applicationScope.count}
     <div class="container-fluid">
-	   <div class="container-fluid">
+	  <div class="container-fluid">
 	<div class="row">
         <br>
         
@@ -37,12 +37,6 @@
 				<li>
 					<a href="login">登录</a>
 				</li>
-				<li  class="active">
-					<a href="shop">购物车</a>
-				</li>
-				<li >
-					<a href="order">我的订单</a>
-				</li>
 				<li>
 					<a href="register">注册</a>
 				</li>
@@ -52,6 +46,13 @@
 				<li>
 					<a href="forgetpwd">忘记密码</a>
 				</li>
+				<li  class="active">
+					<a href="shop">购物车</a>
+				</li>
+				<li >
+					<a href="order">我的订单</a>
+				</li>
+				
 				<li>
 					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
@@ -66,13 +67,13 @@
 	</div>
 		<br>
 		<br>
-		<div class="row clearfix">
-			<div class="col-md-1 column">
-			</div>
-			<div class="col-md-10 column">
+		
+				<div class="row clearfix">
+				<div class="col-md-1 column">
+				</div>
+				<div class="col-md-10 column">
 				<table class="table">
 					<thead>
-				
 						<tr>
 							<th>
 							图片
@@ -100,9 +101,10 @@
 							</th>
 						</tr>
 					</thead>
-				<tbody>
-				<c:forEach items="${requestScope.shop_list }" var="shop">
+					<c:forEach items="${requestScope.shop_list }" var="shop">
 					<c:forEach items="${shop.book }" var="book">
+				<tbody>
+				
 					
 					<tr>
 						<td>
@@ -129,18 +131,23 @@
 							<a href="remove?book_id=${book.id}"><font size=5>删除</font></a>
 						</td>
 						<td>
-							<a href="order?book_id=${book.id }"><font size=5>立即购买</font></a>
+							<a href="saveOrder1?book_id=${book.id }&loginname=${user.loginname}&image=${book.image}&name=${book.name}"><font size=5>立即购买</font></a>
 						</td>
 					</tr>
-						</c:forEach>
-					</c:forEach>
+						
 					
 					</tbody>
+					</c:forEach>
+					</c:forEach>
 				 </table>
 				</div>
 				<div class="col-md-1 column">
+				</div>
 			</div>
-			</div>
+			
 	
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

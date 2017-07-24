@@ -15,7 +15,7 @@ public interface UserService {
 	 * */
 	User login(String loginname,String password);
 	
-	User forgetpwd(String loginname,String email);
-	
 	User changepassword(String loginname,String rewpassword,String rewpsd);
+	
+	User forgetpwd(String loginname,String email);
 }

@@ -18,7 +18,7 @@
   </head>
 <body>
 <div class="container-fluid">
-   <div class="container-fluid">
+  <div class="container-fluid">
 	<div class="row">
         <br>
         
@@ -27,6 +27,8 @@
 				Aigoshop
 			</h3>
 		</div>
+	<div class="row">
+        <br>
 		<div class="col-md-6">
 			<ul class="nav nav-tabs">
 				<li >
@@ -34,12 +36,6 @@
 				</li>
 				<li>
 					<a href="login">登录</a>
-				</li>
-				<li >
-					<a href="shop">购物车</a>
-				</li>
-				<li >
-					<a href="order">我的订单</a>
 				</li>
 				<li  class="active">
 					<a href="register">注册</a>
@@ -50,6 +46,13 @@
 				<li>
 					<a href="forgetpwd">忘记密码</a>
 				</li>
+				<li >
+					<a href="shop">购物车</a>
+				</li>
+				<li >
+					<a href="order">我的订单</a>
+				</li>
+				
 				<li>
 					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>

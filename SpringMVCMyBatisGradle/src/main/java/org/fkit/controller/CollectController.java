@@ -47,7 +47,7 @@ public class CollectController {
 		return "collect";
 	}
 	/**
-	 * 处理/cart请求
+	 * 处理/collect请求
 	 */
 	@RequestMapping(value="/collect")
 	public String collect(String loginname,
@@ -62,17 +62,7 @@ public class CollectController {
 	/**
 	 * 处理/clearcollect请求
 	 */
-	@RequestMapping(value="/clearcollect")
-	public String clear(String loginname,
-			Model model){
-		collectService.clearCollect(loginname);
-		//获得所有商品集合
-		List<Collect> collect_list = collectService.getAllCollectByLoginname(loginname);
-		//将商品集合添加到model当中
-		model.addAttribute("collect_list", collect_list);
-		//跳转到collect页面
-		return "collect";
-	}
+
 	/**
 	 * 处理/removecollect请求
 	 */

@@ -48,12 +48,6 @@
 				<li>
 					<a href="login">登录</a>
 				</li>
-				<li >
-					<a href="shop">购物车</a>
-				</li>
-				<li >
-					<a href="order">我的订单</a>
-				</li>
 				<li>
 					<a href="register">注册</a>
 				</li>
@@ -63,6 +57,13 @@
 				<li>
 					<a href="forgetpwd">忘记密码</a>
 				</li>
+				<li >
+					<a href="shop">购物车</a>
+				</li>
+				<li >
+					<a href="order">我的订单</a>
+				</li>
+				
 				<li>
 					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
@@ -177,7 +178,9 @@
 					 </button>
 				</div>
 				<div class="col-md-5 column">
-					 <button type="button" class="btn btn-default btn-success">购买</button>
+					 <button type="button" class="btn btn-default btn-success">
+					 <a href="saveOrder1?book_id=${book.id }&loginname=${user.loginname}&image=${book.image}&name=${book.name}">立即购买</a>
+					 </button>
 				</div>
 			</div>
 		</div>

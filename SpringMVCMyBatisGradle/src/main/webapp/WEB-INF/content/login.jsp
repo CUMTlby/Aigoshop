@@ -90,36 +90,33 @@ function userLogin(){   /**用户登录，其中需要判断是否选择记住�
 </script> 
 
   </head>
+
   <body>
 
     <div class="container-fluid">
-    <div class="row">
-        <br>
-        <div class="col-md-3">
+	<div class="row">
+	<div class="col-md-3">
         </div>
-		<div class="col-md-3">
+	<div class="col-md-6">
 			<h3 class="text-danger">
 				Aigoshop
 			</h3>
 		</div>
-	<div class="row">
 		<div class="col-md-12">
-		
 			<form class="form-horizontal" role="form" action="login" method="post">
-			
 				<div class="form-group">
 					 <br>
 					 <br>
-					<label for="loginname" class="col-sm-2 control-label">
-						登录名
+					<label for="inputEmail3" class="col-sm-2 control-label">
+						用户名
 					</label>
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						<input type="text" class="form-control" name="loginname" id="loginname" value="${user.loginname}">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="password" class="col-sm-2 control-label">
+					<label for="inputPassword3" class="col-sm-2 control-label">
 						密码
 					</label>
 					<div class="col-sm-4">
@@ -129,15 +126,14 @@ function userLogin(){   /**用户登录，其中需要判断是否选择记住�
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<div class="checkbox">
+							 
 							<label class="rember-me">
-   							<input type="checkbox" id="chkRememberPass" name="chkRememberPass">
-                  			记住密码 
+								<input type="checkbox" id="chkRememberPass" name="chkRememberPass"> 记住密码
 							</label>
-							
 							<br>
 						</div>
 						<div class="col-sm-6">
-						    <a href="forgetpwd">忘记密码？&nbsp;&nbsp;</ a>
+						    <a href="repwd">忘记密码？&nbsp;&nbsp;</ a>
 							<a href="register">注册</ a>
 						</div>
 					</div>
@@ -146,7 +142,7 @@ function userLogin(){   /**用户登录，其中需要判断是否选择记住�
 					<div class="col-sm-offset-3 col-sm-10">
 						 
 						<button type="submit" class="btn btn-default" onclick="userLogin()">
-						        登录
+							登录
 						</button>
 					</div>
 				</div>

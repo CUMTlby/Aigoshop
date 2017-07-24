@@ -20,6 +20,7 @@
   <body>
 欢迎[${sessionScope.user.loginname }]访问,当前在线人数：${applicationScope.count}
     <div class="container-fluid">
+	<div class="container-fluid">
 	<div class="row">
         <br>
         
@@ -36,12 +37,6 @@
 				<li>
 					<a href="login">登录</a>
 				</li>
-				<li >
-					<a href="shop">购物车</a>
-				</li>
-				<li  >
-					<a href="order">我的订单</a>
-				</li>
 				<li>
 					<a href="register">注册</a>
 				</li>
@@ -51,6 +46,13 @@
 				<li>
 					<a href="forgetpwd">忘记密码</a>
 				</li>
+				<li >
+					<a href="shop">购物车</a>
+				</li>
+				<li  >
+					<a href="order">我的订单</a>
+				</li>
+				
 				<li class="active">
 					<a href="collect?loginname=${sessionScope.user.loginname}">收藏</a>
 				</li>
@@ -66,6 +68,8 @@
 		<br>
 		<br>
 		<div class="row clearfix">
+			<div class="col-md-12 column">
+		<div class="row clearfix">
 			<div class="col-md-3 column">
 			</div>
 			<div class="col-md-6 column">
@@ -79,7 +83,6 @@
 							<th>
 							商品
 							</th>
-							
 							<th>
 							价格
 							</th>
@@ -114,5 +117,11 @@
 				<div class="col-md-3 column">
 			</div>
 			</div>
+			</div>
+			</div>
+			
+			<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

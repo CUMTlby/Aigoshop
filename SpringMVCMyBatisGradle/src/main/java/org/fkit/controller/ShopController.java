@@ -14,24 +14,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ShopController {
 	/**
-	 * 自动注入BookService
+	 * 自动注入ShopService
 	 * */
 	@Autowired
 	@Qualifier("ShopService")
 	private ShopService shopService;
 
 	/**
-	 * 处理/main请求
+	 * 处理/shop请求
 	 * */
-	
 	
 	@RequestMapping(value="/shop")
 	 public String shop(Model model){
-		// 获得所有图书集合
+		// 获得所有购物车信息集合
 		List<Shop> shop_list = shopService.getAll();
-		// 将图书集合添加到model当中
+		// 将信息集合添加到model当中
 		model.addAttribute("shop_list", shop_list);
-		// 跳转到main页面
+		// 跳转到shop页面
 		return "shop";
 	}
 	

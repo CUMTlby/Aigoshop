@@ -23,9 +23,7 @@ public interface CollectMapper {
 	 */
 	@Select("select * from tb_collect where loginname=#{loginname} AND book_id=#{book_id}")
 	Collect findCollect(@Param("loginname")String loginname,@Param("book_id")Integer book_id);
-	//清空收藏
-	@Delete("delete from tb_collect where loginname=#{loginname}")
-	void clearCollect(@Param("loginname")String loginname);
+	
 	//删除收藏
 	@Delete("delete from tb_collect where loginname=#{loginname} AND book_id=#{book_id}")
 	void removeCollect(@Param("loginname")String loginname,

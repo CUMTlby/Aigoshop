@@ -33,16 +33,18 @@ public class UserServiceImpl implements UserService {
 		return userMapper.findWithLoginnameAndPassword(loginname, password);
 	}
 	
+	@Override
+	public User changepassword(String loginname,String rewpassword,String rewpsd) {
+		// TODO Auto-generated method stub
+		return userMapper.updateuser(loginname,rewpassword,rewpsd);
+	}
+	
 	@Transactional(readOnly=true)
 	@Override
 	public User forgetpwd(String loginname, String email) {
 		return userMapper.findWithLoginnameAndEmail(loginname, email);
 	}
 	
-	@Override
-	public User changepassword(String loginname,String rewpassword,String rewpsd) {
-		// TODO Auto-generated method stub
-		return userMapper.updateuser(loginname,rewpassword,rewpsd);
-	}
+	
 
 }

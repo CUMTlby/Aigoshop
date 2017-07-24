@@ -89,7 +89,7 @@ public class UserController {
 				sendemail.setSubject("找回密码");
 				sendemail.setMsg(builder.toString());
 				sendemail.send();
-				System.out.println("123");
+				
 			}catch(EmailException e){
 				e.printStackTrace();
 				System.out.print("抛出异常");
